@@ -13,6 +13,7 @@ type Driver struct {
 	CompletedJobs []*Job
 
 	maxAllowableWork float64
+	AtHome           bool
 }
 
 func NewDriver(id int, startingLocation *Coord, maxWorkdAllowable float64) *Driver {
@@ -39,6 +40,10 @@ func (d *Driver) AvailableForJob(job *Job) (bool, float64) {
 }
 
 func (d *Driver) AssignJob(job *Job) {
+	if d.AtHome {
+		d.AtHome = false
+	}
+
 	distanceToJob := CalculateCost(d.Location, job.Pickup)
 	d.WorkCompleted = d.WorkCompleted + distanceToJob + job.Cost
 	d.Location = job.Dropoff

@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	path := os.Args[1]
 
 	jobs, err := internal.LoadProblem(path)
