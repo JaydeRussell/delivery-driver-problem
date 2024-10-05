@@ -14,6 +14,6 @@ func main() {
 		panic(fmt.Sprintf("failed to load job list: %s", err))
 	}
 
-	dispatcher := internal.NewDispatcher(60 * 12)
+	dispatcher := internal.NewDispatcher(internal.MAX_TRAVEL_DISTANCE, internal.NEW_DRIVER_COST)
 	dispatcher.Dispatch(jobs)
 }
