@@ -1,5 +1,5 @@
+## Problem
 The problem input contains a list of loads. Each load is formatted as an id followed by pickup and dropoff locations in (x,y) floating point coordinates. An example input with four loads is:
-
 ```
 loadNumber pickup dropoff
 1 (-50.1,80.0) (90.1,12.2)
@@ -16,5 +16,8 @@ Your program must write a solution to stdout. The solution should list, on separ
 This solution means one driver does load 1; another driver does load 4 followed by load 2; and a final driver does load 3.
 
 All problems we provide will be solvable. That is, all loads are possible to complete within the duration of one 12-hour shift. Your program does not have to assess problem feasibility.
+
 No problem will contain more than 200 loads.
 
+## The Solution
+Running the solution should be as simple as `go run main.go {problem_path}` or if you'd like to use the training problems, simply call `make eval` which calls `python3 evaluateShared.py --cmd "go run main.go" --problemDir "Training Problems"`
